@@ -10,7 +10,10 @@ defmodule ProjectEuler.P2 do
     generates fibonacci series and add up till the limit
   """
   def sum(acc, prev, cur) when cur < 4_000_000 do
-    acc  = acc + cur
+    if rem(cur, 2) == 0 do
+      acc  = acc + cur
+    end
+
     sum(acc, cur, prev + cur)
   end
 
