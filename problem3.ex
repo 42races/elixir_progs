@@ -31,7 +31,7 @@ defmodule ProjectEuler.P3 do
   end
 
   def is_prime?(n) when n > 1 do
-    !Enum.any?((2..round(n/2)), fn x -> rem(n,x) == 0 end)
+    !Enum.any?((2..div(n, 2)), fn x -> rem(n, x) == 0 end)
   end
 
   def is_prime?(_) do
